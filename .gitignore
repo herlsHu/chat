@@ -1,0 +1,14 @@
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if you add any in the future)
+node_modules/
+
+# Environment files
+.env
+.env.local 
