@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃桃子</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>桃桃子</h1>
+            <p class="subtitle">我想了解你的oc！</p>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- 消息将在这里动态添加 -->
+        </div>
+        <div class="chat-input-container">
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="输入消息..." />
+                <button onclick="sendMessage()">发送</button>
+                <button onclick="skipQuestion()" class="skip-btn">跳过</button>
+            </div>
+        </div>
+    </div>
+    <div id="characterDisplayForm" style="display: none;" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black bg-opacity-50">
+        <div class="character-form-container bg-pink-50 p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg w-full max-w-[800px] h-[90vh] flex flex-col">
+            <div class="tabs flex gap-4 mb-4">
+                <button class="tab-trigger active" data-tab="basic">基本设定</button>
+                <button class="tab-trigger" data-tab="supplement">补充设定</button>
+                <button class="tab-trigger" data-tab="language-habit">语言习惯</button>
+            </div>
+            <div class="tab-content active" id="basic-setting-content"></div>
+            <div class="tab-content" id="supplement-setting-content"></div>
+            <div class="tab-content" id="language-habit-content"></div>
+        </div>
+    </div>
+    <script src="script.js?v=1719910400000"></script>
+</body>
+</html> 
