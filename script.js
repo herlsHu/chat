@@ -1,12 +1,6 @@
 // 角色创建的问题列表
 const questions = [
     {
-        id: 'greeting',
-        question: '你好，我是桃桃子，可以帮你实现跟你的oc相处的愿望:P 请给我讲讲你的oc吧！',
-        description: '开场白',
-        isAIOnly: true
-    },
-    {
         id: 'name',
         question: '先从最基本的开始吧，ta叫什么名字？',
         description: '角色名称'
@@ -42,8 +36,14 @@ const questions = [
         description: '外貌特征'
     },
     {
+        id: 'intro_supplement',
+        question: '好的，以上都是要把ta带来你的身边的基本的信息，我已经全部记住了> < 不过，如果你能告诉我更多的补充信息，ta就会更贴近你想象中的样子哦。',
+        description: '补充信息介绍',
+        isAIOnly: true
+    },
+    {
         id: 'worldview',
-        question: '好的，以上都是要把ta带来你的身边的基本的信息，我已经全部记住了> < 不过，如果你能告诉我更多的补充信息，ta就会更贴近你想象中的样子哦。\nTa生活在一个什么样的世界里？跟我们一样的现代城市，又或者古老的国度、未来的星际？给我讲讲ta所处的世界观吧！',
+        question: 'Ta生活在一个什么样的世界里？跟我们一样的现代城市，又或者古老的国度、未来的星际？给我讲讲ta所处的世界观吧！',
         description: '世界观',
         isAIOnly: false
     },
@@ -249,10 +249,7 @@ function processUserAnswer(questionId, answer) {
             if (mbtiMatch) {
                 return mbtiMatch[0];
             }
-            // 如果用户输入了"其他"，返回"其他"
-            if (answer.includes('其他')) {
-                return '其他';
-            }
+            // Return original answer if no valid MBTI match
             return answer;
 
         case 'alignment':
@@ -261,10 +258,7 @@ function processUserAnswer(questionId, answer) {
             if (alignmentMatch) {
                 return alignmentMatch[0];
             }
-            // 如果用户输入了"其他"，返回"其他"
-            if (answer.includes('其他')) {
-                return '其他';
-            }
+            // Return original answer if no valid alignment match
             return answer;
 
         case 'gender':
